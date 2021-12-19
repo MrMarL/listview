@@ -1,0 +1,48 @@
+// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Вот он результат: " + F(1,3,7));
+
+double F(int a, int b, int k)
+{
+    if (a>0 && b>0 && k>1)
+        return Math.Sqrt(a*a+k*b);
+    if (a>0 && k!=0) 
+        return Math.Sqrt(b*b+a/2*k);
+    if (b > 0 && (k == 1 || k == 0))
+        return -Math.Sqrt(a/(b+k));
+    return double.NaN;
+}
+
+
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+
+int main()
+{
+    int a = 0;
+    _asm
+    {
+        mov edx, 0
+        mov eax, 45
+        mov ebx, 23
+        mov ecx, 56
+        add edx, eax
+        add edx, ebx
+        add edx, ecx
+        mov a, edx
+    }
+    cout << a;
+    system("pause");
+}
+
+/*char* tmp = new char[64];
+    cin.getline(tmp, 64);
+    char* i = tmp;
+    char* u = tmp;
+    while ('\0' != *i) {
+        if (*i != ' ')
+            *u++ = *i;
+        i++;
+    }
+    *u = '\0';
+    cout << tmp << endl;*/
